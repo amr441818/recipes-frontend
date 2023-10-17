@@ -24,7 +24,7 @@ const Recipe = ({ recipe, setCurrentId }) => {
         component="img"
         alt="green iguana"
         height="140"
-        image={`http://localhost:5000/${recipe.imageUrl}`}
+        image={`https://recipes-pqii.onrender.com/${recipe.imageUrl}`}
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">

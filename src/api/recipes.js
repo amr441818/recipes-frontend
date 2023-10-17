@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = "http://localhost:5000/api/";
+const url = "https://recipes-pqii.onrender.com/api/";
 
 export const getAllRecipes = () => axios.get(`${url}/recipes`);
 export const getRecipe = (id) => axios.get(`${url}/recipe/${id}`);
