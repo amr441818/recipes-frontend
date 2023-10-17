@@ -19,12 +19,12 @@ const Recipe = ({ recipe, setCurrentId }) => {
     navigate(`/recipe/${recipe._id}`);
   };
   return (
-    <Card sx={{ maxWidth: 345, minHeight: 300, maxHeight: 400 }}>
+    <Card sx={{ maxWidth: 320, minHeight: 300, maxHeight: 400 }}>
       <CardMedia
         component="img"
         alt="green iguana"
         height="140"
-        image={`https://recipes-pqii.onrender.com/${recipe.imageUrl}`}
+        image={`http://localhost:5000/${recipe.imageUrl}`}
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">

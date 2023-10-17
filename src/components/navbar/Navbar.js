@@ -7,7 +7,7 @@ const Navbar = () => {
     <AppBar position="fixed" color="primary">
       <Toolbar>
         <Typography sx={{ flexGrow: 1 }}>
-          <Link to="/" className="logo">
+          <Link to="/recipes/search" className="logo">
             Recipes
           </Link>
         </Typography>

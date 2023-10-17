@@ -26,7 +26,7 @@ const Recipes = () => {
 
   console.log(setSearchTerm, ingredients);
   const searchRecipes = () => {
-    if (searchTerm.trim() || ingredients) {
+    if (searchTerm.trim() || ingredients.length > 0) {
       // dispatch the search recipes
       dispatch(
         fetchRecipesBySearch({
@@ -34,7 +34,6 @@ const Recipes = () => {
           ingredients: ingredients.join(","),
         })
       );
-
       navigate(
         `/recipes/search?searchQuery=${
           searchTerm || "none"
@@ -55,7 +54,10 @@ const Recipes = () => {
       </Typography>
       <Grid
         className="container"
-        sx={{ display: "flex" }}
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+        }}
         spacing={3}
         container
       >
@@ -68,7 +70,23 @@ const Recipes = () => {
             ""
           )}
           {recipes?.map((recipe) => (
-            <Grid item key={recipe._id} xs={12} sm={12} md={6} lg={4}>
+            <Grid
+              item
+              key={recipe._id}
+              spacing={2}
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                flexDirection: "column",
+                alignItems: "center",
+                paddingLeft: 5,
+              }}
+              // sx={{ paddingLeft: 6 }}
+              xs={12}
+              sm={12}
+              md={6}
+              lg={4}
+            >
               <Recipe recipe={recipe} setCurrentId={setCurrentId} />
             </Grid>
           ))}
@@ -91,6 +109,7 @@ const Recipes = () => {
                 label="Search ingredients"
                 variant="outlined"
                 onChange={handleChange}
+                fullWidth
                 value={ingredients}
               />
               <Button

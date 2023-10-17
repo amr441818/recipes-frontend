@@ -1,8 +1,8 @@
 import axios from "axios";
 
-const url = "https://recipes-pqii.onrender.com/api/";
+const url = "http://localhost:5000/api/";
 
-export const getAllRecipes = () => axios.get(`${url}/recipes`);
+export const getAllRecipes = () => axios.get(`${url}`);
 export const getRecipe = (id) => axios.get(`${url}/recipe/${id}`);
 export const fetchRecipesBySearch = (searchQuery) =>
   axios.get(
